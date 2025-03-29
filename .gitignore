@@ -1,0 +1,18 @@
+# 🔐 Environment variables
+.env
+
+# 🔑 Google credentials
+credentials/*.json
+
+# 📦 Node modules
+node_modules/
+
+# 🗑 Logs and temp files
+*.log
+*.zip
+.DS_Store
+
+
+# IDE and OS-specific
+.vscode/
+.idea/

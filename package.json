@@ -1,0 +1,23 @@
+{
+  "name": "turinadmissionbot",
+  "version": "1.0.0",
+  "description": "a bot for the admission",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "googleapis": "^148.0.0",
+    "node-telegram-bot-api": "^0.66.0",
+    "openai": "^4.90.0"
+  }
+}
