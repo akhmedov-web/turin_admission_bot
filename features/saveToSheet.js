@@ -1,5 +1,7 @@
 const { google } = require("googleapis");
-const credentials = require("../credentials/telegrambotsheets-455217-b57f9b6ca34b.json");
+const credentials = process.env.GOOGLE_CREDENTIALS_JSON
+  ? JSON.parse(process.env.GOOGLE_CREDENTIALS_JSON)
+  : require('../credentials/your-file.json');
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 const auth = new google.auth.GoogleAuth({ credentials, scopes: SCOPES });
