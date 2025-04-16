@@ -31,11 +31,14 @@ function getText(lang, key) {
 function sendMainMenu(chatId, lang) {
   const keyboard = {
     keyboard: [
-      [{ text: getText(lang, 'ai_consultation') }],
+
       [{
         text: getText(lang, 'register_admission'),
         web_app: { url: 'https://apply.turin.uz/auth/check-user' }
       }],
+      [{ text: getText(lang, 'ai_consultation') }],
+      [{ text: getText(lang, 'faq_btn') }]
+
     ],
     resize_keyboard: true
   };
@@ -44,6 +47,63 @@ function sendMainMenu(chatId, lang) {
     reply_markup: keyboard,
     parse_mode: "HTML" 
   });
+
+  bot.on('message', async (msg) => {
+    const chatId = msg.chat.id;
+    const text = msg.text;
+    const lang = userLang.get(chatId) || 'en';
+
+  
+    if (text === getText(lang, 'faq_btn') && userState.get(chatId) !== 'faq') {
+      const faqKeyboard = {
+        keyboard: [
+          [{ text: getText(lang, 'faq_faculties') }],
+          [{ text: getText(lang, 'faq_tuition') }],
+          [{ text: getText(lang, 'faq_exams') }],
+          [{ text: getText(lang, 'faq_scholarship') }],
+          [{ text: getText(lang, 'faq_location') }],
+          [{ text: getText(lang, 'faq_back') }]
+        ],
+        resize_keyboard: true
+      };
+  
+      bot.sendMessage(chatId, getText(lang, 'faq'), {
+        reply_markup: faqKeyboard
+      });
+  
+      userState.set(chatId, 'faq');
+      return;
+    }
+  
+    // Handle FAQ responses
+    if (userState.get(chatId) === 'faq') {
+      switch (text) {
+        case getText(lang, 'faq_faculties'):
+          bot.sendMessage(chatId, getText(lang, 'faq_faculties_text'));
+          break;
+        case getText(lang, 'faq_tuition'):
+          bot.sendMessage(chatId, getText(lang, 'faq_tuition_text'));
+          break;
+        case getText(lang, 'faq_exams'):
+          bot.sendMessage(chatId, getText(lang, 'faq_exams_text'));
+          break;
+        case getText(lang, 'faq_scholarship'):
+          bot.sendMessage(chatId, getText(lang, 'faq_scholarship_text'));
+          break;
+        case getText(lang, 'faq_location'):
+          bot.sendMessage(chatId, getText(lang, 'faq_location_text'));
+          break;
+        case getText(lang, 'faq_back'):
+          sendMainMenu(chatId, lang);
+          userState.set(chatId, 'main_menu');
+          break;
+        default:
+          bot.sendMessage(chatId, getText(lang, 'invalid_option'));
+      }
+      return;
+    }
+  });
+  
 }
 
 // RESET all data on /start
@@ -121,7 +181,15 @@ bot.on('message', async (msg) => {
 
   // AI consultation flow
   if (userState.get(chatId) === 'main_menu' && text === getText(lang, 'ai_consultation')) {
-    bot.sendMessage(chatId, getText(lang, 'ask_question'));
+    const aiKeyboard = {
+      keyboard: [[{ text: getText(lang, 'faq_back') }]],
+      resize_keyboard: true
+    };
+  
+    bot.sendMessage(chatId, getText(lang, 'ask_question'), {
+      reply_markup: aiKeyboard
+    });
+    
     userState.set(chatId, 'awaiting_ai_question');
     return;
   }
@@ -129,6 +197,12 @@ bot.on('message', async (msg) => {
   // AI response
   // AI response block — FIXED to avoid answering after /start
 if (userState.get(chatId) === 'awaiting_ai_question' && text !== '/start' && text !== '/menu') {
+  if (text === getText(lang, 'faq_back')) {
+    sendMainMenu(chatId, lang);
+    userState.set(chatId, 'main_menu');
+    return;
+  }
+
   bot.sendChatAction(chatId, 'typing');
   try {
     const answer = await askGPT(text);

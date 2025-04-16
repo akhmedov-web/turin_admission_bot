@@ -1,8 +1,21 @@
 {
-    "ask_full_name": "Iltimos, to‘liq ismingizni kiriting:👇",
-    "ask_phone_number": "Iltimos, telefon raqamingizni ulashing:",
-    "ai_consultation": "🤖 Sun'iy intellekt bilan maslahat",
-    "register_admission": "📝 Qabul uchun ro‘yxatdan o‘tish",
-    "main_menu": "<b>Hammasi ajoyib🏆</b> \n\nSizga qanday yordam bera olamiz?👇",
-    "ask_question": "💬 TTPU haqida savolingizni yozing:"
-  }
+  "ask_full_name": "Iltimos, to‘liq ismingizni kiriting:👇",
+  "ask_phone_number": "Iltimos, telefon raqamingizni ulashing:",
+  "ai_consultation": "🤖 Sun'iy intellekt bilan maslahat",
+  "register_admission": "📝 Qabul uchun ro‘yxatdan o‘tish",
+  "main_menu": "<b>Hammasi ajoyib🏆</b> \n\nSizga qanday yordam bera olamiz?👇",
+  "ask_question": "💬 TTPU haqida savolingizni yozing:",
+  "faq": "👇 Quyidagi menyuda TOBB ETO‘ga qabul jarayoni bo‘yicha savol-javob ma’lumotlarini topishingiz mumkin.",
+  "faq_btn":"📩 FAQ",
+  "faq_faculties": "🏛 Fakultitetlar",
+  "faq_tuition": "💰 Kontrakt narxlari",
+  "faq_exams": "📝 Imtixon qog'ozlari",
+  "faq_scholarship": "🎓 Grantlar haqida",
+  "faq_location": "📍 Manzil",
+  "faq_back": "🔙 Orqaga",
+  "faq_faculties_text": "TTPUda 'Mexanika', 'Avtomobilsozlik' 'IT va avtomatlashtirish', 'Mexatronika muhandisligi' ta’lim yo‘nalishlari mavjud.",
+  "faq_tuition_text": "Barcha bakalavriat dasturlari yiliga 3200 dollar turadi.",
+  "faq_exams_text": "Siz matematikadan ichki imtihon topshirishingiz va ingliz tilini bilishingizni isbotlashingiz kerak (IELTS 5.5 yoki TTPU ingliz tili testi).",
+  "faq_scholarship_text": "Stipendiyalar xizmatga asoslangan (imtihonning eng yuqori ballari) va ehtiyojga asoslangan (mavjud moliyaviy yordam) bo‘ladi.",
+  "faq_location_text": "TTPU Toshkent, Kichik halqa yo‘li, 17-uyda joylashgan."
+}

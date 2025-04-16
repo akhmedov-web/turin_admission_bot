@@ -4,5 +4,18 @@
   "ask_phone_number": "Please share your phone number:",
   "ai_consultation": "🤖 AI Consultation",
   "register_admission": "📝 Register for Admission",
-  "ask_question": "💬 Please enter your question about TTPU:"
+  "ask_question": "💬 Please enter your question about TTPU:",
+  "faq": "👇 In the following menu you can find FAQ information regarding admission process of TOBB ETÜ.",
+  "faq_btn": "📩 FAQ",
+  "faq_faculties": "🏛 Faculties",
+  "faq_tuition": "💰 Tuition Fee",
+  "faq_exams": "📝 Exam Papers",
+  "faq_scholarship": "🎓 Scholarship Details",
+  "faq_location": "📍 Location",
+  "faq_back": "🔙 Back",
+  "faq_faculties_text": "TTPU offers programs in Mechanical, Automotive, IT & Automation, and Mechatronics Engineering.",
+  "faq_tuition_text": "All undergraduate programs cost $3,200 per year.",
+  "faq_exams_text": "You must take an internal math exam and prove English proficiency (IELTS 5.5 or TTPU English test).",
+  "faq_scholarship_text": "Scholarships are merit-based (top exam scorers) and need-based (financial aid available).",
+  "faq_location_text": "TTPU is located at Kichik Halqa Yuli 17, Tashkent, Uzbekistan."
 }
