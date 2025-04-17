@@ -192,8 +192,8 @@ bot.on("message", async (msg) => {
         sendMainMenu(chatId, lang);
         userState.set(chatId, "main_menu");
         return;
-      default:
-        return bot.sendMessage(chatId, getText(lang, "invalid_option"));
+        default:
+        return bot.sendMessage(chatId, getText(lang, 'invalid_option'));      
     }
   }
 });

@@ -5,6 +5,7 @@
   "ai_consultation": "🤖 AI Consultation",
   "register_admission": "📝 Register for Admission",
   "ask_question": "💬 Please enter your question about TTPU:",
+  "invalid_option": "❌ I didn't understand that. Please use the buttons below.",
   "faq": "👇 In the following menu you can find FAQ information regarding admission process of TTPU.",
   "faq_btn": "📩 FAQ",
   "faq_faculties": "🏛 Faculties",
